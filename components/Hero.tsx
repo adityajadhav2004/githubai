@@ -26,16 +26,19 @@ export default function Hero() {
 
       {/* Badge Section */}
       <div className="flex flex-wrap justify-center gap-4 mb-6">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img 
           src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='31'%3E%3Crect width='88' height='31' fill='%23000'/%3E%3Ctext x='44' y='20' font-family='Arial' font-size='10' fill='%2300FF00' text-anchor='middle'%3ENetscape Now!%3C/text%3E%3C/svg%3E"
           alt="Best Viewed in Netscape"
           className="border-2 border-[#00FF00]"
         />
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img 
           src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='31'%3E%3Crect width='88' height='31' fill='%23FF00FF'/%3E%3Ctext x='44' y='20' font-family='Arial' font-size='10' fill='%23000' text-anchor='middle'%3EGeoCities%3C/text%3E%3C/svg%3E"
           alt="GeoCities"
           className="border-2 border-[#FF00FF]"
         />
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img 
           src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='31'%3E%3Crect width='88' height='31' fill='%2300FFFF'/%3E%3Ctext x='44' y='20' font-family='Arial' font-size='8' fill='%23000' text-anchor='middle' font-weight='bold'%3ELighthouse 95%2B%3C/text%3E%3C/svg%3E"
           alt="Lighthouse 95+"

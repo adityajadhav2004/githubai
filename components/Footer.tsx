@@ -1,16 +1,11 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Marquee from './Marquee';
 
 export default function Footer() {
-  const [visitorCount, setVisitorCount] = useState(0);
-
-  useEffect(() => {
-    // Simulate visitor counter
-    const count = Math.floor(Math.random() * 999999) + 100000;
-    setVisitorCount(count);
-  }, []);
+  // Generate random visitor count on mount
+  const [visitorCount] = useState(() => Math.floor(Math.random() * 999999) + 100000);
 
   return (
     <footer className="py-8 mt-8 border-t-4 border-[#00FF00]">
@@ -29,14 +24,17 @@ export default function Footer() {
 
       {/* Retro Badges Row */}
       <div className="flex flex-wrap justify-center gap-3 mb-6">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img 
           src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='31'%3E%3Crect width='88' height='31' fill='%23000'/%3E%3Ctext x='44' y='20' font-family='monospace' font-size='9' fill='%2300FF00' text-anchor='middle'%3EBest Viewed%3C/text%3E%3Ctext x='44' y='28' font-family='monospace' font-size='7' fill='%2300FF00' text-anchor='middle'%3ENetscape 4.0%3C/text%3E%3C/svg%3E"
           alt="Best Viewed in Netscape"
         />
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img 
           src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='31'%3E%3Crect width='88' height='31' fill='%23FF00FF'/%3E%3Ctext x='44' y='20' font-family='monospace' font-size='10' fill='%23000' font-weight='bold' text-anchor='middle'%3EGeoCities%3C/text%3E%3C/svg%3E"
           alt="GeoCities"
         />
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img 
           src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='31'%3E%3Crect width='88' height='31' fill='%2300FFFF'/%3E%3Ctext x='44' y='15' font-family='monospace' font-size='8' fill='%23000' font-weight='bold' text-anchor='middle'%3EHTML 3.2%3C/text%3E%3Ctext x='44' y='25' font-family='monospace' font-size='8' fill='%23000' font-weight='bold' text-anchor='middle'%3ECOMPLIANT%3C/text%3E%3C/svg%3E"
           alt="HTML 3.2"
