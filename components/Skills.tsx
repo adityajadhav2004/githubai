@@ -2,49 +2,49 @@
 
 import { useState, useEffect } from 'react';
 
+const commands = [
+  '> skills --list',
+  '',
+  'Languages:',
+  '  - Python',
+  '  - JavaScript / TypeScript',
+  '  - C++',
+  '  - Bash',
+  '',
+  'Web Stack:',
+  '  - React.js',
+  '  - Next.js',
+  '  - Django',
+  '  - Tailwind CSS',
+  '  - Framer Motion',
+  '',
+  'Backend & Databases:',
+  '  - MongoDB',
+  '  - PostgreSQL',
+  '  - MySQL',
+  '  - Supabase',
+  '  - Neon',
+  '',
+  'AI & Machine Learning:',
+  '  - OpenRouter API',
+  '  - NewsAPI',
+  '  - NLP Libraries',
+  '  - AI Model Integration',
+  '',
+  'Extras:',
+  '  - Three.js (3D Graphics)',
+  '  - GSAP Animation',
+  '  - SEO Optimization',
+  '  - Content Strategy',
+  '  - Social Media Growth',
+  '  - Linux System Admin',
+  '',
+  '> Status: All systems operational ✓'
+];
+
 export default function Skills() {
   const [currentCommand, setCurrentCommand] = useState(0);
   const [displayText, setDisplayText] = useState('');
-
-  const commands = [
-    '> skills --list',
-    '',
-    'Languages:',
-    '  - Python',
-    '  - JavaScript / TypeScript',
-    '  - C++',
-    '  - Bash',
-    '',
-    'Web Stack:',
-    '  - React.js',
-    '  - Next.js',
-    '  - Django',
-    '  - Tailwind CSS',
-    '  - Framer Motion',
-    '',
-    'Backend & Databases:',
-    '  - MongoDB',
-    '  - PostgreSQL',
-    '  - MySQL',
-    '  - Supabase',
-    '  - Neon',
-    '',
-    'AI & Machine Learning:',
-    '  - OpenRouter API',
-    '  - NewsAPI',
-    '  - NLP Libraries',
-    '  - AI Model Integration',
-    '',
-    'Extras:',
-    '  - Three.js (3D Graphics)',
-    '  - GSAP Animation',
-    '  - SEO Optimization',
-    '  - Content Strategy',
-    '  - Social Media Growth',
-    '  - Linux System Admin',
-    '',
-    '> Status: All systems operational ✓'
-  ];
 
   useEffect(() => {
     const interval = setInterval(() => {
