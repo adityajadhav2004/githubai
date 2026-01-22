@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&family=Press+Start+2P&display=swap');
+@import "tailwindcss";
+
+:root {
+  --neon-green: #00FF00;
+  --hot-pink: #FF00FF;
+  --cyan: #00FFFF;
+  --yellow: #FFFF00;
+  --retro-blue: #001f3f;
+  --retro-black: #000000;
+}
+
+@theme inline {
+  --color-background: var(--retro-black);
+  --color-foreground: var(--neon-green);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--retro-black);
+  color: var(--neon-green);
+  font-family: 'Courier New', 'Lucida Console', monospace;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* CRT Monitor Effect */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    repeating-linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.15),
+      rgba(0, 0, 0, 0.15) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* CRT Glow */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at center, rgba(0, 255, 0, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 9998;
+}
+
+/* Scanlines */
+.scanlines {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0.1) 2px,
+    transparent 2px,
+    transparent 4px
+  );
+  pointer-events: none;
+  z-index: 9997;
+  opacity: 0.5;
+}
+
+/* Blinking Text */
+@keyframes blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+.blink {
+  animation: blink 1s infinite;
+}
+
+/* Neon Glow Effect */
+.neon-text {
+  text-shadow: 
+    0 0 5px var(--neon-green),
+    0 0 10px var(--neon-green),
+    0 0 20px var(--neon-green),
+    0 0 40px var(--neon-green);
+}
+
+/* Marquee styling */
+marquee {
+  padding: 10px 0;
+  font-weight: bold;
+}
+
+/* Table Styles */
+table {
+  border: 2px solid var(--neon-green);
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid var(--neon-green);
+  padding: 8px;
+}
+
+/* Links */
+a {
+  color: var(--cyan);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+a:visited {
+  color: var(--hot-pink);
+}
+
+a:hover {
+  color: var(--yellow);
+}
+
+/* HR Lines */
+hr {
+  border: 1px solid var(--neon-green);
+  margin: 20px 0;
+}
+
+/* Button Styles */
+button {
+  background: var(--retro-black);
+  border: 2px solid var(--neon-green);
+  color: var(--neon-green);
+  padding: 10px 20px;
+  font-family: 'Courier New', monospace;
+  cursor: pointer;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+button:hover {
+  background: var(--neon-green);
+  color: var(--retro-black);
+}
+
+/* Input Styles */
+input, textarea {
+  background: var(--retro-black);
+  border: 2px solid var(--neon-green);
+  color: var(--neon-green);
+  padding: 8px;
+  font-family: 'Courier New', monospace;
+  width: 100%;
+  margin: 5px 0;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  box-shadow: 0 0 10px var(--neon-green);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--retro-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--neon-green);
+  border: 1px solid var(--neon-green);
+}
+
+/* Loading bar animation */
+@keyframes loading {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+.loading-bar {
+  animation: loading 3s ease-in-out;
+}
+
+/* Pixel art cursor */
+* {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><rect width="2" height="2" x="0" y="0" fill="%2300FF00"/><rect width="2" height="2" x="2" y="2" fill="%2300FF00"/><rect width="2" height="2" x="4" y="4" fill="%2300FF00"/><rect width="2" height="2" x="6" y="6" fill="%2300FF00"/><rect width="2" height="2" x="8" y="8" fill="%2300FF00"/></svg>'), auto;
+}
+
+button, a {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><rect width="16" height="16" fill="%2300FF00"/></svg>'), pointer;
+}
