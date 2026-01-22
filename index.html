@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditya Jadhav - Web Developer & AI Builder 🌐</title>
+    <style>
+        /* Classic GeoCities styling with CRT effects */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(180deg, #000033 0%, #000066 50%, #000033 100%);
+            color: #00ff00;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+            text-shadow: 0 0 5px #00ff00;
+        }
+
+        /* CRT scanlines effect */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.15),
+                rgba(0, 0, 0, 0.15) 1px,
+                transparent 1px,
+                transparent 2px
+            );
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        /* CRT glow effect */
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at center, transparent 0%, rgba(0, 20, 40, 0.7) 100%);
+            pointer-events: none;
+            z-index: 9998;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(0, 0, 50, 0.5);
+            border: 3px solid #00ff00;
+            padding: 20px;
+            box-shadow: 0 0 20px #00ff00, inset 0 0 20px rgba(0, 255, 0, 0.1);
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            color: #00ffff;
+            text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+            animation: blink 1.5s infinite;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: #ff00ff;
+            text-shadow: 0 0 10px #ff00ff;
+            border-bottom: 2px dashed #00ff00;
+            padding-bottom: 5px;
+            margin-top: 20px;
+            margin-bottom: 15px;
+        }
+
+        @keyframes blink {
+            0%, 49% { opacity: 1; }
+            50%, 100% { opacity: 0.3; }
+        }
+
+        .marquee {
+            background: #000099;
+            border: 2px solid #ffff00;
+            padding: 10px;
+            margin: 15px 0;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        marquee {
+            color: #ffff00;
+            font-weight: bold;
+            text-shadow: 0 0 5px #ffff00;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            border: 2px solid #00ff00;
+        }
+
+        td {
+            border: 1px solid #00ff00;
+            padding: 10px;
+            vertical-align: top;
+        }
+
+        a {
+            color: #00ffff;
+            text-decoration: none;
+            text-shadow: 0 0 5px #00ffff;
+            font-weight: bold;
+        }
+
+        a:hover {
+            color: #ffff00;
+            text-shadow: 0 0 10px #ffff00;
+            text-decoration: underline;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #000000;
+            border: 2px solid #ffff00;
+            padding: 5px 10px;
+            margin: 5px;
+            text-align: center;
+            color: #ffff00;
+            font-weight: bold;
+        }
+
+        .counter {
+            background: #000000;
+            border: 3px solid #ff00ff;
+            padding: 10px;
+            text-align: center;
+            margin: 20px auto;
+            width: fit-content;
+            color: #ff00ff;
+            font-size: 20px;
+            text-shadow: 0 0 10px #ff00ff;
+        }
+
+        ul {
+            list-style-type: none;
+            margin-left: 20px;
+        }
+
+        li::before {
+            content: "▸ ";
+            color: #00ff00;
+            font-weight: bold;
+        }
+
+        .project {
+            background: rgba(0, 50, 100, 0.3);
+            border: 2px solid #00ffff;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        .project h3 {
+            color: #ffff00;
+            text-shadow: 0 0 5px #ffff00;
+            margin-bottom: 5px;
+        }
+
+        .gif-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .pixel-art {
+            image-rendering: pixelated;
+            image-rendering: -moz-crisp-edges;
+            image-rendering: crisp-edges;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .glow {
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+            }
+            to {
+                text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
+            }
+        }
+
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .skill-badge {
+            background: #000080;
+            border: 2px solid #00ff00;
+            padding: 8px 15px;
+            color: #00ffff;
+            font-weight: bold;
+            text-shadow: 0 0 5px #00ffff;
+            display: inline-block;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid #00ff00;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 24px;
+            }
+            .container {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header with blinking title -->
+        <h1>⚡ ADITYA JADHAV ⚡</h1>
+        <div class="center">
+            <p style="font-size: 20px; color: #ffff00; text-shadow: 0 0 10px #ffff00;">
+                <strong>🌟 Web Developer & AI Builder 🌟</strong>
+            </p>
+        </div>
+
+        <!-- Scrolling marquee -->
+        <div class="marquee">
+            <marquee>🔥 WELCOME TO MY CYBER PORTFOLIO 🔥 UNDER CONSTRUCTION 🚧 LAST UPDATED: January 2026 🔥 BEST VIEWED IN NETSCAPE NAVIGATOR 🔥</marquee>
+        </div>
+
+        <!-- Badges -->
+        <div class="center">
+            <div class="badge">⚠️ BEST VIEWED IN NETSCAPE</div>
+            <div class="badge">🖥️ 800x600 RESOLUTION</div>
+            <div class="badge">🌐 HTML 3.2 COMPLIANT</div>
+        </div>
+
+        <!-- Visitor Counter -->
+        <div class="counter">
+            👁️ VISITOR COUNT: <span class="glow">001337</span> 👁️
+        </div>
+
+        <!-- About Me Section -->
+        <h2>▶ ABOUT ME</h2>
+        <table>
+            <tr>
+                <td width="70%">
+                    <p>👋 <strong>Greetings, Digital Traveler!</strong></p>
+                    <p style="margin-top: 10px;">
+                        I'm <span style="color: #ffff00;">Aditya Jadhav</span>, a passionate <strong>Web Developer</strong> 
+                        and <strong>AI Builder</strong> based in the vibrant city of <span style="color: #00ffff;">Mumbai, India</span>. 
+                    </p>
+                    <p style="margin-top: 10px;">
+                        🚀 I craft cutting-edge web experiences and intelligent AI systems that push the boundaries 
+                        of technology. From sleek user interfaces to powerful machine learning models, I bring ideas to life!
+                    </p>
+                    <p style="margin-top: 10px;">
+                        💡 Currently exploring the intersection of web development and artificial intelligence 
+                        to create innovative solutions for tomorrow's challenges.
+                    </p>
+                </td>
+                <td width="30%" style="text-align: center;">
+                    <div style="font-size: 80px;">🧑‍💻</div>
+                    <div style="color: #ff00ff; margin-top: 10px;">CODING SINCE 2020</div>
+                </td>
+            </tr>
+        </table>
+
+        <!-- Skills Section -->
+        <h2>▶ TECHNICAL SKILLS</h2>
+        <div class="skills-grid">
+            <div class="skill-badge">⚛️ React</div>
+            <div class="skill-badge">🔥 Next.js</div>
+            <div class="skill-badge">🐍 Python</div>
+            <div class="skill-badge">🤖 AI/ML</div>
+            <div class="skill-badge">🎮 Three.js</div>
+            <div class="skill-badge">💻 JavaScript</div>
+            <div class="skill-badge">🎨 CSS3</div>
+            <div class="skill-badge">📊 Data Science</div>
+            <div class="skill-badge">🧠 Neural Networks</div>
+            <div class="skill-badge">☁️ Cloud Computing</div>
+        </div>
+
+        <!-- Projects Section -->
+        <h2>▶ FEATURED PROJECTS</h2>
+        
+        <div class="project">
+            <h3>📈 AI Stock Predictor</h3>
+            <p>
+                <strong>Status:</strong> <span style="color: #00ff00;">●</span> ACTIVE
+            </p>
+            <p style="margin-top: 5px;">
+                An intelligent stock market prediction system using machine learning algorithms and real-time data analysis. 
+                Leverages LSTM neural networks and sentiment analysis to forecast market trends with impressive accuracy.
+            </p>
+            <p style="margin-top: 5px;">
+                <strong>Tech Stack:</strong> Python, TensorFlow, Pandas, NumPy, Real-time APIs
+            </p>
+        </div>
+
+        <div class="project">
+            <h3>🔍 AI Search Engine</h3>
+            <p>
+                <strong>Status:</strong> <span style="color: #00ff00;">●</span> ACTIVE
+            </p>
+            <p style="margin-top: 5px;">
+                A next-generation search engine powered by artificial intelligence and natural language processing. 
+                Understands context and intent to deliver more relevant results than traditional keyword-based search.
+            </p>
+            <p style="margin-top: 5px;">
+                <strong>Tech Stack:</strong> Python, NLP, Vector Databases, React, Next.js
+            </p>
+        </div>
+
+        <div class="project">
+            <h3>⚛️ Physics Simulation Engine</h3>
+            <p>
+                <strong>Status:</strong> <span style="color: #ffff00;">●</span> IN DEVELOPMENT
+            </p>
+            <p style="margin-top: 5px;">
+                An interactive 3D physics simulation using Three.js and WebGL. Features real-time particle systems, 
+                collision detection, and realistic physics calculations. Perfect for educational purposes and game development.
+            </p>
+            <p style="margin-top: 5px;">
+                <strong>Tech Stack:</strong> Three.js, WebGL, JavaScript, Physics Engines
+            </p>
+        </div>
+
+        <div class="project">
+            <h3>🎙️ Voice Assistant AI</h3>
+            <p>
+                <strong>Status:</strong> <span style="color: #00ff00;">●</span> ACTIVE
+            </p>
+            <p style="margin-top: 5px;">
+                A sophisticated voice-controlled AI assistant with natural language understanding and speech synthesis. 
+                Can perform tasks, answer questions, and integrate with various services through voice commands.
+            </p>
+            <p style="margin-top: 5px;">
+                <strong>Tech Stack:</strong> Python, Speech Recognition, NLP, Text-to-Speech
+            </p>
+        </div>
+
+        <!-- Experience Section -->
+        <h2>▶ EXPERIENCE HIGHLIGHTS</h2>
+        <table>
+            <tr>
+                <td width="30%" style="color: #00ffff; font-weight: bold;">
+                    💼 Full-Stack Development
+                </td>
+                <td>
+                    Building responsive, scalable web applications using modern frameworks and best practices. 
+                    Specialized in React, Next.js, and backend integration.
+                </td>
+            </tr>
+            <tr>
+                <td width="30%" style="color: #00ffff; font-weight: bold;">
+                    🤖 AI/ML Engineering
+                </td>
+                <td>
+                    Developing and deploying machine learning models for various applications including 
+                    predictive analytics, natural language processing, and computer vision.
+                </td>
+            </tr>
+            <tr>
+                <td width="30%" style="color: #00ffff; font-weight: bold;">
+                    🎨 3D Web Graphics
+                </td>
+                <td>
+                    Creating immersive 3D experiences using Three.js and WebGL. 
+                    Expertise in interactive visualizations and game-like interfaces.
+                </td>
+            </tr>
+            <tr>
+                <td width="30%" style="color: #00ffff; font-weight: bold;">
+                    📊 Data Analytics
+                </td>
+                <td>
+                    Analyzing complex datasets and building data pipelines. 
+                    Proficient in data visualization and extracting actionable insights.
+                </td>
+            </tr>
+        </table>
+
+        <!-- Contact Section -->
+        <h2>▶ CONNECT WITH ME</h2>
+        <div class="center" style="margin: 20px 0;">
+            <p style="font-size: 18px; margin-bottom: 15px;">
+                🌐 Let's collaborate and build something amazing together!
+            </p>
+            <div>
+                <a href="https://github.com/adityajadhav2004" target="_blank">🔗 GitHub</a> • 
+                <a href="https://linkedin.com/in/adityajadhav2004" target="_blank">💼 LinkedIn</a> • 
+                <a href="https://twitter.com/adityajadhav2004" target="_blank">🐦 Twitter</a> • 
+                <a href="mailto:aditya@example.com">📧 Email</a>
+            </div>
+        </div>
+
+        <!-- Animated GIF placeholder -->
+        <div class="gif-container">
+            <div style="background: #000; border: 2px solid #ff00ff; padding: 20px; display: inline-block;">
+                <div style="font-size: 60px; animation: blink 0.5s infinite;">🚧</div>
+                <div style="color: #ff00ff;">UNDER CONSTRUCTION</div>
+                <div style="color: #ffff00; margin-top: 5px; font-size: 12px;">WEBSITE v1.0</div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p style="color: #00ffff;">✨ Built with HTML, CSS, and a lot of 90s nostalgia ✨</p>
+            <p style="margin-top: 10px;">
+                <span style="color: #ff00ff;">⚡ Powered by Retro Technology ⚡</span>
+            </p>
+            <div style="margin-top: 15px;">
+                <div class="badge">GEOCITIES STYLE</div>
+                <div class="badge">Y2K COMPLIANT</div>
+                <div class="badge">100% VINTAGE</div>
+            </div>
+            <p style="margin-top: 20px; font-size: 12px;">
+                © 2026 Aditya Jadhav | Last Updated: <span style="color: #ffff00;">January 22, 2026</span>
+            </p>
+            <p style="margin-top: 10px;">
+                <marquee behavior="alternate" width="50%">⭐ THANK YOU FOR VISITING ⭐</marquee>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
